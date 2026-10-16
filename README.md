@@ -24,6 +24,22 @@ Small accessible component set for React built on native elements (no UI library
 `Spinner`, `Skeleton`. Styling lives in `ui.css` as CSS variables (light/dark, WCAG AA contrast) and `ui-*` classes.
 Used by @core/admin, @core/blocks and the kits.
 
+## Setup
+
+After `genpm add`, follow these steps (your AI agent finds the same steps in `src/lib/ui/AGENTS.md` and can do them for you):
+
+1. Import the stylesheet once in the root layout: `import '@/lib/ui/ui.css'` and add `className="ui-root"` to `<body>`.
+2. Use components: `<TextField label="Email" type="email" required error={errors.email} />`, `<Button variant="primary" loading={saving}>Save</Button>`.
+3. Theme: change `--ui-*` variables in your CSS; force a theme with `<html data-theme="dark">`.
+4. Verify: tab through a form; every control has a visible focus ring and a label.
+
+## What's inside
+
+Paths are relative to `src/lib/ui`.
+
+- `index.ts` — all components and `cx()`.
+- `components.ts` — implementation. `ui.css` — tokens and styles.
+
 ## At a glance
 
 - **npm dependencies** (proposed, never installed without asking): `react`
